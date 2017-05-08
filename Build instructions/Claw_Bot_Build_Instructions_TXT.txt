@@ -1,0 +1,69 @@
+Claw Bot Build Instructions
+Follow pictures if help is needed.
+
+
+Follow the layout as for all parts needed excluding (solder,wire,etc…)
+
+
+
+Feet
+(2X) Mount a 4 piece 90* bracket ,with the holes on the outside, onto a 4 width rectangular piece, sitting slightly back so you only need one screw.
+
+Base
+(2X) Create your “pillars” by combining two dominoes and two u-bends
+(2X) Then Mount to your feet as far back as possible with your pillar hanging off towards the other foot 
+Then take your long off set 3 hole piece (length varies on robot) and mount to the underside of your pillars connecting your feet
+(2X) Mount your servo on the beam connecting your feet 3 hole spaces from your pillar
+Then place your second beam on top of your pillars and secure 
+Lastly Fasten your servos down to your top beam
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ping Sensor
+ Take a dominos and mount it ,with the two holes in the middle, to a 4 hole 90* piece
+
+Claw
+(2X) Take two dominoes and combine them with two parallelogram pieces with the triangle hole closest to the base and tip
+(2X) Attach your newly made claw to the servo with the two top most holes(bots POV) of the base of the claw
+
+Electronics Mounting
+(Optional) hot glue the edges of your arduino to a 4 width rectangular piece with 4 holes hanging off for attaching
+Glue your ping sensor to the domino in the middle of your servos
+On the back left glue your battery box (we used a 4x AA)
+On top of your battery box mount your switch
+Beside your battery box attach your arduino to the right most servo. If you didn’t put a meccano piece on your arduino then attach how you see fit.
+
+
+
+
+
+Electronics Wiring
+Wire your switch to your battery box (we have a double pole single throw so we cut both ground and power with our switch)
+Daisy chain your servos
+You can either wrap your wires around your base to tidy up or you can also zip tie them up to make a neat build
+Next you will need a 
+4 pin female header
+4 pin male headers
+(2x) 3 pin male headers 
+
+- Next wire your output leads(If not already done so) and with them to your arduino (use the holes in the meccano pieces to keep it tidy)
+Finally Wire to the pins as described.
+(Batt+) —> (Vin)
+(Servo+) —> (5v)
+(Ping Vcc) —> (5v)
+(Batt-) —> (Ground)
+(Ping GND) —> (Ground)
+(Servo GND) —> (Ground)
+(Ping Trig) —> (Digital 3)
+(Ping Echo) —> (Digital 4)
+(Servo Data) —> (Digital 5)
