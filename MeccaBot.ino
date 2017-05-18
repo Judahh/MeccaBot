@@ -31,6 +31,8 @@ const int rightDirPin = 13;
 
 int index = 0;
 bool presence = false;
+bool timer = true;// -------------------------------------------------------------------------TIMER!!!!
+int timerDelay = 10000;// -------------------------------------------------------------------------TIMER!!!!
 
 MeccaBrain chain1(chainPin1); //left
 MeccaBrain chain2(chainPin2); //head
@@ -262,7 +264,7 @@ void waveHand(byte arm, int timeD) {
 }
 
 void handGesture(byte arm, int timeD) {
-  setJoint(arm, 255);
+  setJoint(arm, 190);
   delay(timeD);
 
   setJoint(arm, 127);
@@ -299,7 +301,12 @@ void setup() {
 
 void loop() {
   //  Serial.println("S");
-  presence = digitalRead(pirPin);
+  if(!timer){
+    presence = digitalRead(pirPin);
+  }else{
+    delay(timerDelay);
+    presence = true;
+  }
   digitalWrite(ledPin, presence);
 
   //make every joint of the robot a different color just for fun
@@ -353,7 +360,7 @@ void loop() {
       handGesture(RIGHT_ARM_ELBOW, 500);
     }
 
-    setJoint(RIGHT_ARM_PITCH, 0);
+    setJoint(RIGHT_ARM_PITCH, 60);
     delay(100);
 
     r2D2();
@@ -362,6 +369,8 @@ void loop() {
     chain1.communicate();
     chain2.communicate();
     chain3.communicate();
-//    delay(5000);
+    if(timer){
+      presence=false;
+    }
   }
 }
